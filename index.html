@@ -1,1 +1,58 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Professional Personal Website</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>John Doe</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact" role="button">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Welcome to My Website</h2>
+                    <h3>John Doe - Professional Consultant</h3>
+                </hgroup>
+                <p>I am a seasoned professional with extensive experience in business consulting. My goal is to provide tailored solutions to help businesses achieve their strategic objectives.</p>
+                <figure>
+                    <img src="https://source.unsplash.com/random/800x600" alt="John Doe" />
+                    <figcaption><a href="#" target="_blank">Learn More About Me</a></figcaption>
+                </figure>
+                <h3>My Services</h3>
+                <p>I offer a wide range of consulting services, including business strategy, process improvement, and change management.</p>
+                <h3>Contact Me</h3>
+                <p>For inquiries or to schedule a consultation, please reach out via the contact section below.</p>
+            </section>
+        </div>
+    </main>
+    <section aria-label="Subscribe example">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>Stay Updated</h2>
+                    <h3>Subscribe to My Newsletter</h3>
+                </hgroup>
+                <form class="grid">
+                    <input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Your Name" required />
+                    <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
+                    <button type="submit" onclick="event.preventDefault()">Subscribe</button>
+                </form>
+            </article>
+        </div>
+    </section>
+    <footer class="container">
+        <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Use</a></small>
+    </footer>
+</body>
+</html>
