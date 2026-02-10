@@ -1,58 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <title>Professional Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xiao Wu, MD | Radiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1e2a32;
+      --slate: #4a5c66;
+      --mist: #f5f7f8;
+      --accent: #1f5f6b;
+      --line: #e1e7ea;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--mist);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(980px, 92vw);
+      margin: 0 auto;
+      padding: 40px 0 70px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .name {
+      font-family: "Merriweather", serif;
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .title {
+      color: var(--slate);
+      font-size: 1.05rem;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+
+    .contact div {
+      margin-bottom: 6px;
+    }
+
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 18px 0 0;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+      margin-top: 32px;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-family: "Merriweather", serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      margin-bottom: 10px;
+    }
+
+    .block {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .block.list-block {
+      padding: 8px 20px;
+    }
+
+    .block h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .block p {
+      color: var(--slate);
+      font-size: 0.98rem;
+    }
+
+    .list {
+      list-style: none;
+    }
+
+    .list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--slate);
+    }
+
+    .list li:last-child {
+      border-bottom: none;
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border: 1px solid var(--line);
+      background: transparent;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--slate);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 30px;
+      padding-top: 16px;
+      font-size: 0.9rem;
+      color: var(--slate);
+    }
+
+    @media (max-width: 860px) {
+      header {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        text-align: left;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="container-fluid">
-        <ul>
-            <li><strong>John Doe</strong></li>
-        </ul>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact" role="button">Contact</a></li>
-        </ul>
-    </nav>
-    <main class="container">
-        <div class="grid">
-            <section>
-                <hgroup>
-                    <h2>Welcome to My Website</h2>
-                    <h3>John Doe - Professional Consultant</h3>
-                </hgroup>
-                <p>I am a seasoned professional with extensive experience in business consulting. My goal is to provide tailored solutions to help businesses achieve their strategic objectives.</p>
-                <figure>
-                    <img src="https://source.unsplash.com/random/800x600" alt="John Doe" />
-                    <figcaption><a href="#" target="_blank">Learn More About Me</a></figcaption>
-                </figure>
-                <h3>My Services</h3>
-                <p>I offer a wide range of consulting services, including business strategy, process improvement, and change management.</p>
-                <h3>Contact Me</h3>
-                <p>For inquiries or to schedule a consultation, please reach out via the contact section below.</p>
-            </section>
+  <div class="page">
+    <header>
+      <div>
+        <div class="name">Xiao Wu, MD</div>
+        <div class="title">Resident, Interventional Radiology | UCSF School of Medicine</div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#training">Training</a>
+          <a href="#awards">Awards</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="contact" id="contact">
+        <div><a href="https://profiles.ucsf.edu/xiao.wu" target="_blank" rel="noreferrer">UCSF Profile</a></div>
+        <div>
+          <a class="icon-link" href="https://x.com/@XiaoWuMD" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M3 2h4.7l4.2 6.1L17.3 2H21l-7 9.1L21 22h-4.7l-4.6-6.6L6.5 22H3l7.5-9.8L3 2z"/>
+            </svg>
+          </a>
         </div>
+        <div>
+          <a class="icon-link" href="https://www.linkedin.com/in/xiao-wu-5b95bb91/" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.98 0H13v2.2h.08c.7-1.33 2.4-2.73 4.94-2.73 5.28 0 6.26 3.47 6.26 7.98V24h-5v-7.98c0-1.9-.03-4.33-2.64-4.33-2.64 0-3.04 2.06-3.04 4.19V24h-5V8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <section id="about">
+          <h2>About</h2>
+          <div class="block">
+            <p>
+              Xiao Wu, MD is a resident in Interventional Radiology at the UCSF School of Medicine,
+              committed to thoughtful, evidence-driven care. Her research centers on outcomes and
+              cost-effectiveness in interventional radiology, as well as neurovascular imaging, with
+              a focus on translating evidence into clinical practice.
+            </p>
+          </div>
+        </section>
+
+        <section id="training">
+          <h2>Training &amp; Education</h2>
+          <div class="block">
+            <h3>Residency</h3>
+            <p>UCSF School of Medicine — Interventional Radiology (Resident)</p>
+          </div>
+          <div class="block">
+            <h3>Medical School</h3>
+            <p>Yale University School of Medicine — MD, Medicine (05/2020)</p>
+          </div>
+          <div class="block">
+            <h3>Undergraduate</h3>
+            <p>Yale College — B.S., Mathematics (05/2016)</p>
+          </div>
+        </section>
+
+        <section id="awards">
+          <h2>Awards</h2>
+          <div class="block list-block">
+            <ul class="list">
+              <li>Resident Research Award, Society of Interventional Radiology (2024)</li>
+              <li>Featured Abstract, Society of Interventional Radiology (2023)</li>
+              <li>Top Reviewer, JAMA Open (2023)</li>
+              <li>Trainee Research Prize, Radiological Society of North America (2022)</li>
+              <li>Resident Clinical and Translational Research Funding, UCSF (2022–2023)</li>
+              <li>Elizabeth Lowell Putnam Prize, William Lowell Putnam Mathematical Competition (2013)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="publications">
+          <h2>Selected Publications</h2>
+          <div class="block list-block">
+            <ul class="list">
+              <li><strong>Wu X</strong>, Bajaj S, Khunte M, Revzin M, Gandhi D, Wintermark M, Sanelli P, Forman H, Malhotra A. Diversity in radiology: current status and trends over the past decade. Radiology. 2022.</li>
+              <li>Malhotra A, <strong>Wu X</strong>, Fleishon HB, Duszak R, Silva E, McGinty GB, Bender C, Williams B, Pashley N, Stengel CJB, Naidich JJ, Hughes D, Sanelli PC. Initial impact of COVID-19 on radiology practices: an ACR/RBMA survey. Journal of the American College of Radiology. 2020.</li>
+              <li>Malhotra A, <strong>Wu X</strong>, Forman HP, Grossetta Nardini HK, Matouk CC, Gandhi D, Moore C, Sanelli P. Growth and rupture risk of small unruptured intracranial aneurysms: a systematic review. Annals of Internal Medicine. 2017.</li>
+              <li><strong>Wu X</strong>, Zhao Y, Radev D, Malhotra A. Identification of patients with carotid stenosis using natural language processing. European Radiology. 2020.</li>
+              <li><strong>Wu X</strong>, Malhotra A, Geng B, Kalra VB, Abbed K, Forman HP, Sanelli P. Cost-effectiveness of magnetic resonance imaging in cervical clearance of obtunded blunt trauma after a normal computed tomographic finding. JAMA Surgery. 2018.</li>
+              <li>Malhotra A, <strong>Wu X</strong>, Forman HP, Matouk CC, Gandhi D, Sanelli P. Management of tiny unruptured intracranial aneurysms: a comparative effectiveness analysis. JAMA Neurology. 2018.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <div class="portrait">
+          <img src="Wu_Xiao.jpg" alt="Xiao Wu, MD" />
+        </div>
+        <section>
+          <h2>Links</h2>
+          <ul class="list">
+            <li><a href="https://scholar.google.com/citations?user=3krnMR0AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a></li>
+            <li><a href="https://radiology.ucsf.edu/people/xiao-wu" target="_blank" rel="noreferrer">UCSF Radiology</a></li>
+          </ul>
+        </section>
+      </aside>
     </main>
-    <section aria-label="Subscribe example">
-        <div class="container">
-            <article>
-                <hgroup>
-                    <h2>Stay Updated</h2>
-                    <h3>Subscribe to My Newsletter</h3>
-                </hgroup>
-                <form class="grid">
-                    <input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Your Name" required />
-                    <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
-                    <button type="submit" onclick="event.preventDefault()">Subscribe</button>
-                </form>
-            </article>
-        </div>
-    </section>
-    <footer class="container">
-        <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Use</a></small>
+
+    <footer>
+      © 2026 Xiao Wu, MD. All rights reserved.
     </footer>
+  </div>
 </body>
 </html>
